@@ -1,0 +1,25 @@
+<h1>Listing coordenadors</h1>
+
+<table>
+  <tr>
+    <th>Pessoa</th>
+    <th>Curso</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @coordenadors.each do |coordenador| %>
+  <tr>
+    <td><%= coordenador.pessoa %></td>
+    <td><%= coordenador.curso %></td>
+    <td><%= link_to 'Show', coordenador %></td>
+    <td><%= link_to 'Edit', edit_coordenador_path(coordenador) %></td>
+    <td><%= link_to 'Destroy', coordenador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Coordenador', new_coordenador_path %>

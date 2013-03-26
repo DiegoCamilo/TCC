@@ -1,0 +1,23 @@
+<h1>Listing diretors</h1>
+
+<table>
+  <tr>
+    <th>Pessoa</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @diretors.each do |diretor| %>
+  <tr>
+    <td><%= diretor.pessoa %></td>
+    <td><%= link_to 'Show', diretor %></td>
+    <td><%= link_to 'Edit', edit_diretor_path(diretor) %></td>
+    <td><%= link_to 'Destroy', diretor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Diretor', new_diretor_path %>

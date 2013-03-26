@@ -1,0 +1,33 @@
+<h1>Listing mapeamentos</h1>
+
+<table>
+  <tr>
+    <th>Data semestre</th>
+    <th>Curso</th>
+    <th>Disciplina</th>
+    <th>Periodo turma</th>
+    <th>Turno</th>
+    <th>Professor</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mapeamentos.each do |mapeamento| %>
+  <tr>
+    <td><%= mapeamento.data_semestre %></td>
+    <td><%= mapeamento.curso %></td>
+    <td><%= mapeamento.disciplina %></td>
+    <td><%= mapeamento.periodo_turma %></td>
+    <td><%= mapeamento.turno %></td>
+    <td><%= mapeamento.professor %></td>
+    <td><%= link_to 'Show', mapeamento %></td>
+    <td><%= link_to 'Edit', edit_mapeamento_path(mapeamento) %></td>
+    <td><%= link_to 'Destroy', mapeamento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mapeamento', new_mapeamento_path %>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  professor: 
+  dia_semana: MyString
+  horario1: 
+  horario2: 
+  horario3: 
+  horario4: 
+  horario5: 
+  horario6: 
+
+two:
+  professor: 
+  dia_semana: MyString
+  horario1: 
+  horario2: 
+  horario3: 
+  horario4: 
+  horario5: 
+  horario6: 

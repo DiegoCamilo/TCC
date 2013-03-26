@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Pessoa:</b>
+  <%= @coordenador.pessoa %>
+</p>
+
+<p>
+  <b>Curso:</b>
+  <%= @coordenador.curso %>
+</p>
+
+
+<%= link_to 'Edit', edit_coordenador_path(@coordenador) %> |
+<%= link_to 'Back', coordenadors_path %>

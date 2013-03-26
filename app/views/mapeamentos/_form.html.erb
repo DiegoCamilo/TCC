@@ -1,0 +1,41 @@
+<%= form_for(@mapeamento) do |f| %>
+  <% if @mapeamento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mapeamento.errors.count, "error") %> prohibited this mapeamento from being saved:</h2>
+
+      <ul>
+      <% @mapeamento.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :data_semestre %><br />
+    <%= f.text_field :data_semestre %>
+  </div>
+  <div class="field">
+    <%= f.label :curso %><br />
+    <%= f.text_field :curso %>
+  </div>
+  <div class="field">
+    <%= f.label :disciplina %><br />
+    <%= f.text_field :disciplina %>
+  </div>
+  <div class="field">
+    <%= f.label :periodo_turma %><br />
+    <%= f.text_field :periodo_turma %>
+  </div>
+  <div class="field">
+    <%= f.label :turno %><br />
+    <%= f.text_field :turno %>
+  </div>
+  <div class="field">
+    <%= f.label :professor %><br />
+    <%= f.text_field :professor %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

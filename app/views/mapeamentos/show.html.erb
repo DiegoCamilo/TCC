@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Data semestre:</b>
+  <%= @mapeamento.data_semestre %>
+</p>
+
+<p>
+  <b>Curso:</b>
+  <%= @mapeamento.curso %>
+</p>
+
+<p>
+  <b>Disciplina:</b>
+  <%= @mapeamento.disciplina %>
+</p>
+
+<p>
+  <b>Periodo turma:</b>
+  <%= @mapeamento.periodo_turma %>
+</p>
+
+<p>
+  <b>Turno:</b>
+  <%= @mapeamento.turno %>
+</p>
+
+<p>
+  <b>Professor:</b>
+  <%= @mapeamento.professor %>
+</p>
+
+
+<%= link_to 'Edit', edit_mapeamento_path(@mapeamento) %> |
+<%= link_to 'Back', mapeamentos_path %>

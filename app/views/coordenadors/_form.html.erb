@@ -1,0 +1,25 @@
+<%= form_for(@coordenador) do |f| %>
+  <% if @coordenador.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@coordenador.errors.count, "error") %> prohibited this coordenador from being saved:</h2>
+
+      <ul>
+      <% @coordenador.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pessoa %><br />
+    <%= f.text_field :pessoa %>
+  </div>
+  <div class="field">
+    <%= f.label :curso %><br />
+    <%= f.text_field :curso %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

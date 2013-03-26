@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  data_semestre: MyString
+  curso: 
+  disciplina: 
+  periodo_turma: MyString
+  turno: MyString
+  professor: 
+
+two:
+  data_semestre: MyString
+  curso: 
+  disciplina: 
+  periodo_turma: MyString
+  turno: MyString
+  professor: 
