@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130317171348) do
+ActiveRecord::Schema.define(:version => 20130330013211) do
 
   create_table "coordenadors", :force => true do |t|
     t.integer  "pessoa_id"
@@ -59,12 +59,12 @@ ActiveRecord::Schema.define(:version => 20130317171348) do
   add_index "horarios", ["professor_id"], :name => "index_horarios_on_professor_id"
 
   create_table "mapeamentos", :force => true do |t|
+    t.string   "nome"
     t.string   "data_semestre"
     t.integer  "curso_id"
+    t.integer  "turma_id"
     t.integer  "disciplina_id"
     t.integer  "professor_id"
-    t.string   "periodo_turma"
-    t.string   "turno"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20130317171348) do
   add_index "mapeamentos", ["curso_id"], :name => "index_mapeamentos_on_curso_id"
   add_index "mapeamentos", ["disciplina_id"], :name => "index_mapeamentos_on_disciplina_id"
   add_index "mapeamentos", ["professor_id"], :name => "index_mapeamentos_on_professor_id"
+  add_index "mapeamentos", ["turma_id"], :name => "index_mapeamentos_on_turma_id"
 
   create_table "pessoas", :force => true do |t|
     t.string   "nome"
@@ -96,5 +97,16 @@ ActiveRecord::Schema.define(:version => 20130317171348) do
   end
 
   add_index "professors", ["pessoa_id"], :name => "index_professors_on_pessoa_id"
+
+  create_table "turmas", :force => true do |t|
+    t.integer  "curso_id"
+    t.string   "periodo_turma"
+    t.string   "turno"
+    t.string   "nome"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "turmas", ["curso_id"], :name => "index_turmas_on_curso_id"
 
 end

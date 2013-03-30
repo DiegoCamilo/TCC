@@ -25,6 +25,8 @@ class TurmasController < ApplicationController
   # GET /turmas/new.json
   def new
     @turma = Turma.new
+    @turma.curso = Curso.new
+    @cursos = Curso.all
 
     respond_to do |format|
       format.html # new.html.erb

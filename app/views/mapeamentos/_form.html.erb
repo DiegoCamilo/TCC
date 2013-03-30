@@ -21,19 +21,19 @@
   </div>
   <div class="field">
     <%= f.label :curso %><br />
-    <%= f.text_field :curso %>
+    <%= f.select :curso, @cursos.collect {|p| [ p.nome, p.id ] }, { :include_blank => true } %>
   </div>
   <div class="field">
     <%= f.label :disciplina %><br />
-    <%= f.text_field :disciplina %>
+    <%= f.select :disciplina, @disciplinas.collect {|p| [ p.nome, p.id ] }, { :include_blank => true } %>
   </div>
   <div class="field">
     <%= f.label :professor %><br />
-    <%= f.text_field :professor %>
+    <%= f.select :professor, @professors.collect {|p| [ p.pessoa.nome, p.id ] }, { :include_blank => true } %>
   </div>
   <div class="field">
     <%= f.label :turma %><br />
-    <%= f.text_field :turma %>
+    <%= f.select :turma, @turmas.collect {|p| [ p.nome, p.id ] }, { :include_blank => true } %>
   </div>
   <div class="actions">
     <%= f.submit %>

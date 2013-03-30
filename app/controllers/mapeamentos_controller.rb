@@ -25,6 +25,10 @@ class MapeamentosController < ApplicationController
   # GET /mapeamentos/new.json
   def new
     @mapeamento = Mapeamento.new
+    @professors = Professor.all
+    @cursos = Curso.all
+    @disciplinas = Disciplina.all
+    @turmas = Turma.all
 
     respond_to do |format|
       format.html # new.html.erb

@@ -15,6 +15,14 @@
     <%= f.label :nome %><br />
     <%= f.text_field :nome %>
   </div>
+  <div class="field">
+    <%= f.label "tipo de pessoa" %><br />
+    <select id="tipo" name="tipo">
+    	<option value="p">professor</option>
+    	<option value="d">diretor</option>
+    	<option value="c">coordenador</option>
+    </select>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

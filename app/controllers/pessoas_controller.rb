@@ -41,6 +41,10 @@ class PessoasController < ApplicationController
   # POST /pessoas.json
   def create
     @pessoa = Pessoa.new(params[:pessoa])
+    
+    @pessoa.professor = Professor.new if params[:tipo] == "p"
+    @pessoa.diretor = Diretor.new if params[:tipo] == "d"
+    @pessoa.coordenador = Coordenador.new if params[:tipo] == "c"
 
     respond_to do |format|
       if @pessoa.save
