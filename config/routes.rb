@@ -2,6 +2,9 @@ TCC::Application.routes.draw do
   resources :mapeamentos
 
 
+  resources :turmas
+
+
   resources :disciplinas
 
 

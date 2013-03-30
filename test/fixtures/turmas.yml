@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  curso: 
+  periodo_turma: MyString
+  turno: MyString
+  nome: MyString
+
+two:
+  curso: 
+  periodo_turma: MyString
+  turno: MyString
+  nome: MyString

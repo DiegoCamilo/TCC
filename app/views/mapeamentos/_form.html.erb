@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
     <%= f.label :data_semestre %><br />
     <%= f.text_field :data_semestre %>
   </div>
@@ -24,16 +28,12 @@
     <%= f.text_field :disciplina %>
   </div>
   <div class="field">
-    <%= f.label :periodo_turma %><br />
-    <%= f.text_field :periodo_turma %>
-  </div>
-  <div class="field">
-    <%= f.label :turno %><br />
-    <%= f.text_field :turno %>
-  </div>
-  <div class="field">
     <%= f.label :professor %><br />
     <%= f.text_field :professor %>
+  </div>
+  <div class="field">
+    <%= f.label :turma %><br />
+    <%= f.text_field :turma %>
   </div>
   <div class="actions">
     <%= f.submit %>

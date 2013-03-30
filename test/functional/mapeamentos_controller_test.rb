@@ -18,7 +18,7 @@ class MapeamentosControllerTest < ActionController::TestCase
 
   test "should create mapeamento" do
     assert_difference('Mapeamento.count') do
-      post :create, mapeamento: { data_semestre: @mapeamento.data_semestre, periodo_turma: @mapeamento.periodo_turma, turno: @mapeamento.turno }
+      post :create, mapeamento: { data_semestre: @mapeamento.data_semestre, nome: @mapeamento.nome }
     end
 
     assert_redirected_to mapeamento_path(assigns(:mapeamento))
@@ -35,7 +35,7 @@ class MapeamentosControllerTest < ActionController::TestCase
   end
 
   test "should update mapeamento" do
-    put :update, id: @mapeamento, mapeamento: { data_semestre: @mapeamento.data_semestre, periodo_turma: @mapeamento.periodo_turma, turno: @mapeamento.turno }
+    put :update, id: @mapeamento, mapeamento: { data_semestre: @mapeamento.data_semestre, nome: @mapeamento.nome }
     assert_redirected_to mapeamento_path(assigns(:mapeamento))
   end
 
