@@ -84,4 +84,19 @@ class MapeamentosController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def carrega_dados
+    if params[:tipoDado] == "turma"
+      turno = params[:turno]
+      curso = params[:curso]
+      
+      @turmas = Turma.where("curso_id = ?", curso)
+      
+      @turmas = @turmas.where("turno = ?", turno) unless turno.blank?
+      
+      respond_to do |format|
+        format.json { render json: @turmas }
+      end
+    end
+  end
 end

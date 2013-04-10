@@ -1,5 +1,9 @@
 TCC::Application.routes.draw do
-  resources :mapeamentos
+  resources :mapeamentos do
+    collection do
+      get "carrega_dados"
+    end
+  end
 
 
   resources :turmas

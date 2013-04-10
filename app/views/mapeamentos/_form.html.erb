@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :turma %><br />
-    <%= f.select :turma, @turmas.collect {|p| [ p.nome, p.id ] }, { :include_blank => true } %>
+    <%= f.select :turma, "", { :include_blank => true } %>
   </div>
   <div class="actions">
     <%= f.submit %>
