@@ -1,10 +1,14 @@
 TCC::Application.routes.draw do
+  
+  devise_for :pessoas
+
+  root :to => "mapeamentos#index"
+  
   resources :mapeamentos do
     collection do
       get "carrega_dados"
     end
   end
-
 
   resources :turmas
 
