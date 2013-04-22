@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130330013211) do
+ActiveRecord::Schema.define(:version => 20130330011256) do
 
   create_table "coordenadors", :force => true do |t|
     t.integer  "pessoa_id"
@@ -58,26 +58,24 @@ ActiveRecord::Schema.define(:version => 20130330013211) do
 
   add_index "horarios", ["professor_id"], :name => "index_horarios_on_professor_id"
 
-  create_table "mapeamentos", :force => true do |t|
-    t.string   "nome"
-    t.string   "data_semestre"
-    t.integer  "curso_id"
-    t.integer  "turma_id"
-    t.integer  "disciplina_id"
-    t.integer  "professor_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
-  add_index "mapeamentos", ["curso_id"], :name => "index_mapeamentos_on_curso_id"
-  add_index "mapeamentos", ["disciplina_id"], :name => "index_mapeamentos_on_disciplina_id"
-  add_index "mapeamentos", ["professor_id"], :name => "index_mapeamentos_on_professor_id"
-  add_index "mapeamentos", ["turma_id"], :name => "index_mapeamentos_on_turma_id"
-
   create_table "pessoas", :force => true do |t|
     t.string   "nome"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
   end
 
   create_table "preferencia_professors", :force => true do |t|
