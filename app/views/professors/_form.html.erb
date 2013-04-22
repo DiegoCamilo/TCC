@@ -12,8 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :pessoa %><br />
-    <%= f.text_field :pessoa %>
+  	<%= fields_for :pessoa do |pessoa| %>
+	    <%= pessoa.label :pessoa %><br />
+	    <%= pessoa.text_field :pessoa %>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>

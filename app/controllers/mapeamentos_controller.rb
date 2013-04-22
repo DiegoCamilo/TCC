@@ -39,6 +39,10 @@ class MapeamentosController < ApplicationController
   # GET /mapeamentos/1/edit
   def edit
     @mapeamento = Mapeamento.find(params[:id])
+    @professors = Professor.all
+    @cursos = Curso.all
+    @disciplinas = Disciplina.all
+    @turmas = Turma.all
   end
 
   # POST /mapeamentos
@@ -86,6 +90,7 @@ class MapeamentosController < ApplicationController
   end
   
   def carrega_dados
+    #aqui eu quero pegar as turmas do curso x
     if params[:tipoDado] == "turma"
       turno = params[:turno]
       curso = params[:curso]
@@ -98,5 +103,17 @@ class MapeamentosController < ApplicationController
         format.json { render json: @turmas }
       end
     end
+    
+    #aqui eu quero pegar as disciplinas da turma x
+    if params[:tipoDado] == "disciplina"
+      turma = params[:turma]
+      
+      @disciplinas = Disciplina.joins(:mapeamentos).where("mapeamentos.turma_id = ?", turma)
+      
+      respond_to do |format|
+        format.json { render json: @disciplinas }
+      end
+    end
+    
   end
 end

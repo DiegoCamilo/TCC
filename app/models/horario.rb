@@ -4,4 +4,4 @@ class Horario < ActiveRecord::Base
   
    symbolize :dia_semana, :in => [:segunda_feira, :terca_feira, :quarta_feira, :quinta_feira, 
                                   :sexta_feira, :sabado, :domingo ], :scopes => true
-end
+end 
