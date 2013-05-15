@@ -17,6 +17,9 @@
 	    <%= pessoa.text_field :pessoa %>
     <% end %>
   </div>
+  <div class="field">
+  	<% select_tag :disciplina, options_from_collection_for_select(@disciplinas, 'id', 'nome')%>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

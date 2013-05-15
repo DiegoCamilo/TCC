@@ -45,7 +45,7 @@ class PessoasController < ApplicationController
     @pessoa.professor = Professor.new if params[:tipo] == "p"
     @pessoa.diretor = Diretor.new if params[:tipo] == "d"
     @pessoa.coordenador = Coordenador.new if params[:tipo] == "c"
-
+		
     respond_to do |format|
       if @pessoa.save
         format.html { redirect_to @pessoa, notice: 'Pessoa was successfully created.' }
@@ -61,6 +61,10 @@ class PessoasController < ApplicationController
   # PUT /pessoas/1.json
   def update
     @pessoa = Pessoa.find(params[:id])
+
+		@pessoa.professor = Professor.new if params[:tipo] == "p"
+    @pessoa.diretor = Diretor.new if params[:tipo] == "d"
+    @pessoa.coordenador = Coordenador.new if params[:tipo] == "c"
 
     respond_to do |format|
       if @pessoa.update_attributes(params[:pessoa])

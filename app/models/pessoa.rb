@@ -12,5 +12,9 @@ class Pessoa < ActiveRecord::Base
   has_one :coordenador
 
   attr_accessible :nome
+  
+  validates_presence_of :email
+  validates_presence_of :nome
+  
 end
  
