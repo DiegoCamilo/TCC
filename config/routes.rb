@@ -28,7 +28,12 @@ TCC::Application.routes.draw do
   resources :diretors
 
 
-  resources :professors
+  resources :professors do 
+    member do
+      post "grade_horaria"
+      post "disciplinas"
+    end
+  end
 
 
   resources :pessoas

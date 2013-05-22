@@ -83,4 +83,13 @@ class ProfessorsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def disciplinas
+    @professor = Professor.find(params[:id])
+    disciplina = Disciplina.find(params[:disciplina])
+    @professor.disciplinas << disciplina if @professor.disciplinas.include?(disciplina)
+    respond_to do |format|
+      format.html { redirect_to :back }
+    end
+  end
 end

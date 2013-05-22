@@ -46,7 +46,7 @@ class PessoasController < ApplicationController
     @pessoa.diretor = Diretor.new if params[:tipo] == "d"
     @pessoa.coordenador = Coordenador.new if params[:tipo] == "c"
 		
-    respond_to do |format|
+    respond_to do |foarmat|
       if @pessoa.save
         format.html { redirect_to @pessoa, notice: 'Pessoa was successfully created.' }
         format.json { render json: @pessoa, status: :created, location: @pessoa }
