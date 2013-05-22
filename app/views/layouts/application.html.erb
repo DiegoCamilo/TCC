@@ -7,7 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%= link_to "Sair", destroy_pessoa_session_path %>
+	<% if current_pessoa%>
+		<%= link_to "Sair", destroy_pessoa_session_path %>
+		<%= link_to current_pessoa.nome, edit_pessoa_registration_path(current_pessoa)%>
+	<% end %>
 	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 

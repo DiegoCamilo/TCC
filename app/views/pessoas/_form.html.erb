@@ -15,6 +15,7 @@
     <%= f.label :nome %><br />
     <%= f.text_field :nome %>
   </div>
+  <% if current_pessoa && !(current_pessoa.professor || current_pessoa.coordenador || current_pessoa.diretor) %>
   <div class="field">
     <%= f.label "tipo de pessoa" %><br />
     <select id="tipo" name="tipo">
@@ -23,6 +24,7 @@
     	<option value="c">coordenador</option>
     </select>
   </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

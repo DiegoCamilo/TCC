@@ -34,6 +34,9 @@ class ProfessorsController < ApplicationController
 
   # GET /professors/1/edit
   def edit
+  	
+  	@disciplinas = Disciplina.all
+  	
     @professor = Professor.find(params[:id])
   end
 
